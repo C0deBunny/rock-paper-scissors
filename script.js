@@ -17,3 +17,8 @@ function getHumanChoice() {
 }
 
 console.log(`--Human chooses: ` + getHumanChoice())
+
+let humanScore = 0
+let computerScore = 0
+
+// console.log(`humanScore: ` + humanScore + ` and computerScore: ` + computerScore)
