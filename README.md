@@ -24,6 +24,5 @@ Write the logic to get the human choice\
 
 ### Pseudocode step 4:
 Declare the players score variables\
-1. If human choice wins from computer choice increment point
-2. Print winner of battle
-3. Display points of human vs computer
+1. Create human score and computer score counter
+2. initialize counters at 0
