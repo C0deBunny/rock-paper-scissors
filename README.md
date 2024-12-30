@@ -5,6 +5,7 @@
     - [Description](#description)
     - [Pseudocode Step 2:](#pseudocode-step-2)
     - [Pseudocode step 3:](#pseudocode-step-3)
+    - [Pseudocode step 4:](#pseudocode-step-4)
 
 ### Description
 This is a project made for practicing javascript with The Odin Project. :smile:
@@ -18,5 +19,11 @@ Write the logic to get the computer choice\
 ### Pseudocode step 3:
 Write the logic to get the human choice\
 1. Get human choice
-2. prompt if human choice is (Rock, Paper, Scissors)
+2. Prompt if human choice is (Rock, Paper, Scissors)
 3. Return human choice
+
+### Pseudocode step 4:
+Declare the players score variables\
+1. If human choice wins from computer choice increment point
+2. Print winner of battle
+3. Display points of human vs computer
