@@ -4,6 +4,27 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 60px;
+    color: white;
+    margin: 5px 0;
+    text-shadow: 4px 4px 8px black;
+}
+
+.underText {
+    font-size: 30px;
+    color: white;
+    margin: 10px 0 40px 0;
+    text-shadow: 4px 4px 8px black;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
 }
 
@@ -15,4 +36,9 @@ button {
     width: 400px;
     font-size: 60px;
     border-radius: 50px;
+    box-shadow: 4px 4px 20px black;
+}
+
+button:hover {
+    box-shadow: 0.5px 0.5px 5px black;
 }
