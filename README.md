@@ -6,3 +6,5 @@
 
 ### Description
 This is a project made for practicing javascript with The Odin Project. :smile:
+
+![image](./img/page.png)
