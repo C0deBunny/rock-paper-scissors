@@ -1,38 +1,47 @@
-function getComputerChoice() {  // function to get the computer choice
-    let randomNumber = Math.random()
+function playRound() {
 
-    if (randomNumber <= 0.33) {
-        return `rock`
-    } else if (randomNumber <= 0.66) {
-        return `paper`
-    } else {
-        return `scissors`
-    }
-}
+    // Reset choices
+    let humanChoice = ``
+    let computerChoice = ``
 
-
-
-function getHumanChoice() { // function to get the players choice
-    let humanPrompt = ""
-    humanPrompt = prompt(`Choose 'Rock', 'Paper' or 'Scissors'`)
-    humanPrompt = humanPrompt.toLowerCase()
-    // console.log(humanPrompt)
-    while (humanPrompt !== `rock` && humanPrompt !== `paper` && humanPrompt !== `scissors`) {
-        humanPrompt = prompt(`Wrong input, please choose 'Rock', 'Paper' or 'Scissors'`)
+    // Gets players choice
+    function getHumanChoice() {
+        let humanPrompt = ""
+        humanPrompt = prompt(`Choose 'rock', 'paper' or 'scissors'`)
         humanPrompt = humanPrompt.toLowerCase()
         // console.log(humanPrompt)
+
+        while (humanPrompt !== `rock` && humanPrompt !== `paper` && humanPrompt !== `scissors`) {
+            humanPrompt = prompt(`Wrong input, please choose 'Rock', 'Paper' or 'Scissors'`)
+            humanPrompt = humanPrompt.toLowerCase()
+            // console.log(humanPrompt)
+        }
+
+        console.log(`Player chooses: ` + humanPrompt)
+        return humanPrompt
     }
-    return humanPrompt
-}
 
-let humanScore = 0
-let computerScore = 0
+    // Gets computers choice
+    function getComputerChoice() {
+        let randomNumber = Math.random()
+        
+        if (randomNumber <= 0.33) {
+            console.log(`Computer chooses: rock`)
+            return `rock`
+        } else if (randomNumber <= 0.66) {
+            console.log(`Computer chooses: paper`)
+            return `paper`
+        } else {
+            console.log(`Computer chooses: scissors`)
+            return `scissors`
+        }
+    }
 
-// console.log(`humanScore: ` + humanScore + ` and computerScore: ` + computerScore)
+    // Get choices
+    humanChoice = getHumanChoice()
+    computerChoice = getComputerChoice()
 
-
-
-function playRound(humanChoice, computerChoice) {
+    // Determine the winner
     if (humanChoice === computerChoice) {
         return `You Draw! both players chose ` + humanChoice
     } else if (humanChoice === `rock` && computerChoice === `scissors`) {
@@ -52,7 +61,5 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-let humanSelection = getHumanChoice()
-let computerSelection = getComputerChoice()
-
-console.log(playRound(humanSelection, computerSelection))
+// Play round
+// console.log(playRound())
