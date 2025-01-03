@@ -9,12 +9,10 @@ function playRound() {
 		let humanPrompt = ""
 		humanPrompt = prompt(`Choose 'rock', 'paper' or 'scissors'`)
 		humanPrompt = humanPrompt.toLowerCase()
-		// console.log(humanPrompt)
 
 		while (humanPrompt !== `rock` && humanPrompt !== `paper` && humanPrompt !== `scissors`) {
 			humanPrompt = prompt(`Wrong input, please choose 'Rock', 'Paper' or 'Scissors'`)
 			humanPrompt = humanPrompt.toLowerCase()
-			// console.log(humanPrompt)
 		}
 
 		console.log(`Player chooses: ` + humanPrompt)
@@ -85,7 +83,6 @@ function playRoundX() {
 
 	for (i = 0; i < roundNumber; i++) {
 		console.log(`Start round: ` + (i + 1))
-
 		console.log(playRound())
 		console.log(``)
 		console.log(`Scoreboard:`)
