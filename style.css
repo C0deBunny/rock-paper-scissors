@@ -1,44 +1,44 @@
-body{
-    background-color: rgb(34, 33, 44);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+body {
+	background-color: rgb(34, 33, 44);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .title {
-    font-size: 60px;
-    color: white;
-    margin: 5px 0;
-    text-shadow: 4px 4px 8px black;
+	font-size: 60px;
+	color: white;
+	margin: 5px 0;
+	text-shadow: 4px 4px 8px black;
 }
 
 .underText {
-    font-size: 30px;
-    color: white;
-    margin: 10px 0 40px 0;
-    text-shadow: 4px 4px 8px black;
+	font-size: 30px;
+	color: white;
+	margin: 10px 0 40px 0;
+	text-shadow: 4px 4px 8px black;
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
 }
 
 button {
-    background-color: rgb(255, 90, 31);
-    color: white;
-    border: 0;
-    height: 200px;
-    width: 400px;
-    font-size: 60px;
-    border-radius: 50px;
-    box-shadow: 4px 4px 20px black;
+	background-color: rgb(255, 90, 31);
+	color: white;
+	border: 0;
+	height: 200px;
+	width: 400px;
+	font-size: 60px;
+	border-radius: 50px;
+	box-shadow: 4px 4px 20px black;
 }
 
 button:hover {
-    box-shadow: 0.5px 0.5px 5px black;
+	box-shadow: 0.5px 0.5px 5px black;
 }
