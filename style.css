@@ -1,6 +1,8 @@
 body {
 	background-color: rgb(34, 33, 44);
-	height: 100vh;
+}
+.main {
+	height: calc(100vh - 50px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -73,4 +75,12 @@ button {
 
 button:hover {
 	box-shadow: 0.5px 0.5px 5px black;
+}
+
+.footer {
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	margin: 0;
+	text-decoration: none;
 }
