@@ -14,10 +14,42 @@ body {
 	text-shadow: 4px 4px 8px black;
 }
 
-.underText {
+.choices {
 	font-size: 30px;
+	margin: 5px 0 10px 0;
+	text-shadow: 4px 4px 8px black;
+	display: flex;
+	gap: 50px;
+}
+
+#resultHuman {
+	color: rgb(255, 90, 31);
+	width: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#vs {
+	width: 120px;
 	color: white;
-	margin: 10px 0 40px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#resultComputer {
+	color: rgb(31, 173, 255);
+	width: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#resultFinal {
+	font-size: 40px;
+	color: white;
+	margin: 20px 0 30px 0;
 	text-shadow: 4px 4px 8px black;
 }
 

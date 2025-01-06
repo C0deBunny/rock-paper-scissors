@@ -20,34 +20,56 @@ function playRound(humanChoice) {
 		}
 	}
 
-	// // Get choices
-	console.log(`Player chooses: ` + humanChoice)
+	//Get choices
 	computerChoice = getComputerChoice()
 
 	// Determine the winner
-	if (humanChoice === computerChoice) {
-		return console.log(`You Draw! both players chose ` + humanChoice)
-	} else if (humanChoice === `rock` && computerChoice === `scissors`) {
-		humanScore++
-		return `You Win! Rock smashes scissors`
-	} else if (humanChoice === `paper` && computerChoice === `rock`) {
-		humanScore++
-		return `You Win! Paper wraps rock`
-	} else if (humanChoice === `scissors` && computerChoice === `paper`) {
-		humanScore++
-		return `You Win! Scissors cuts paper`
-	} else if (humanChoice === `scissors` && computerChoice === `rock`) {
-		computerScore++
-		return `You Lose! Rock smashes scissors`
-	} else if (humanChoice === `rock` && computerChoice === `paper`) {
-		computerScore++
-		return `You Lose! Paper wraps rock`
-	} else if (humanChoice === `paper` && computerChoice === `scissors`) {
-		computerScore++
-		return `You Lose! Scissors cuts paper`
-	} else {
-		return `playRound() has bug? xD`
+	let score = 0
+
+	function battle() {
+		if (humanChoice === computerChoice) {
+			return `You Draw! both players chose ` + humanChoice
+		} else if (humanChoice === `rock` && computerChoice === `scissors`) {
+			score++
+			humanScore++
+			return `You Win! Rock smashes scissors`
+		} else if (humanChoice === `paper` && computerChoice === `rock`) {
+			score++
+			humanScore++
+			return `You Win! Paper wraps rock`
+		} else if (humanChoice === `scissors` && computerChoice === `paper`) {
+			score++
+			humanScore++
+			return `You Win! Scissors cuts paper`
+		} else if (humanChoice === `scissors` && computerChoice === `rock`) {
+			score--
+			computerScore++
+			return `You Lose! Rock smashes scissors`
+		} else if (humanChoice === `rock` && computerChoice === `paper`) {
+			score--
+			computerScore++
+			return `You Lose! Paper wraps rock`
+		} else if (humanChoice === `paper` && computerChoice === `scissors`) {
+			score--
+			computerScore++
+			return `You Lose! Scissors cuts paper`
+		} else {
+			return `playRound() has bug? xD`
+		}
 	}
+
+	//Print stuff
+	resultHuman.textContent = `Player chooses: ` + humanChoice
+	resultComputer.textContent = `Computer chooses: ` + computerChoice
+	resultFinal.textContent = battle()
+	if (score > 0) {
+		resultFinal.style.color = "rgb(255, 90, 31)"
+	} else if (score < 0) {
+		resultFinal.style.color = "rgb(31, 173, 255)"
+	} else if (score === 0) {
+		resultFinal.style.color = "white"
+	}
+	vs.textContent = humanScore + " VS " + computerScore
 }
 
 // Play X amount of rounds
@@ -85,7 +107,12 @@ function playRoundX() {
 const rock = document.querySelector("#rock")
 const paper = document.querySelector("#paper")
 const scissors = document.querySelector("#scissors")
-let result = document.querySelector("#result")
+
+//Text UI
+let resultHuman = document.querySelector("#resultHuman")
+let resultComputer = document.querySelector("#resultComputer")
+let resultFinal = document.querySelector("#resultFinal")
+let vs = document.querySelector("#vs")
 
 rock.addEventListener("click", function () {
 	console.log(playRound(`rock`))
