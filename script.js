@@ -3,23 +3,8 @@ let humanScore = 0
 let computerScore = 0
 
 // Play one Round
-function playRound() {
-	// Gets players choice
-	function getHumanChoice() {
-		let humanPrompt = ""
-		humanPrompt = prompt(`Choose 'rock', 'paper' or 'scissors'`)
-		humanPrompt = humanPrompt.toLowerCase()
-
-		while (humanPrompt !== `rock` && humanPrompt !== `paper` && humanPrompt !== `scissors`) {
-			humanPrompt = prompt(`Wrong input, please choose 'Rock', 'Paper' or 'Scissors'`)
-			humanPrompt = humanPrompt.toLowerCase()
-		}
-
-		console.log(`Player chooses: ` + humanPrompt)
-		return humanPrompt
-	}
-
-	// Gets computers choice
+function playRound(humanChoice) {
+	//Gets computers choice
 	function getComputerChoice() {
 		let randomNumber = Math.random()
 
@@ -35,16 +20,13 @@ function playRound() {
 		}
 	}
 
-	// Get choices
-	humanChoice = getHumanChoice()
+	// // Get choices
+	console.log(`Player chooses: ` + humanChoice)
 	computerChoice = getComputerChoice()
 
 	// Determine the winner
 	if (humanChoice === computerChoice) {
-		console.log(`You Draw! both players chose ` + humanChoice)
-		console.log(``)
-		console.log(`Lets try again..`)
-		return playRound()
+		return console.log(`You Draw! both players chose ` + humanChoice)
 	} else if (humanChoice === `rock` && computerChoice === `scissors`) {
 		humanScore++
 		return `You Win! Rock smashes scissors`
@@ -98,3 +80,19 @@ function playRoundX() {
 		console.log(`Looks like it's a draw.. well played!`)
 	}
 }
+
+//Buttons UI
+const rock = document.querySelector("#rock")
+const paper = document.querySelector("#paper")
+const scissors = document.querySelector("#scissors")
+let result = document.querySelector("#result")
+
+rock.addEventListener("click", function () {
+	console.log(playRound(`rock`))
+})
+paper.addEventListener("click", function () {
+	console.log(playRound(`paper`))
+})
+scissors.addEventListener("click", function () {
+	console.log(playRound(`scissors`))
+})
