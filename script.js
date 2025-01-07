@@ -70,9 +70,23 @@ function playRound(humanChoice) {
 		resultFinal.style.color = "white"
 	}
 	vs.textContent = humanScore + " VS " + computerScore
+
+	//5 rounds mechanic
+	if (humanScore == 5 || computerScore == 5) {
+		if (humanScore > computerScore) {
+			resultFinal.textContent = "Congratulations! You won the tournament!"
+			resultFinal.style.color = "rgb(255, 90, 31)"
+		} else {
+			resultFinal.textContent = "Oh no! :C  The computer won the tournament.."
+			resultFinal.style.color = "rgb(31, 173, 255)"
+		}
+
+		humanScore = 0
+		computerScore = 0
+	}
 }
 
-// Play X amount of rounds
+// Play X amount of rounds (NO LONGER USED)
 function playRoundX() {
 	// Reset score
 	humanScore = 0
@@ -114,6 +128,7 @@ let resultComputer = document.querySelector("#resultComputer")
 let resultFinal = document.querySelector("#resultFinal")
 let vs = document.querySelector("#vs")
 
+//Buttons
 rock.addEventListener("click", function () {
 	console.log(playRound(`rock`))
 })
